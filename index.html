@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="interface.css" />
+  </head>
+
+  <body>
+    <p style="text-align: center;" class="statsPrimary">$<span id="cash">0</span></p>
+    <p style="text-align: center;" class="statsSecondary">T$<span id="tokens">0</span></p>
+    <p style="text-align: center;" class="statsTeritary">$<span id="cashPerSecond">0</span>/s</p>
+    <p style="text-align: center;" class="statsTeritary">T$<span id="tokensPerSecond">0</span>/s</p>
+    <p style="text-align: center;"><button class="headerButton centered" onClick="showMain()">Main</button> <button class="headerButton" onClick="showOptions()">Options</button></p>
+    <br>
+    <div id="main">
+    <p style="text-align: center;"><button class="headerButton centered" onClick="showMainClick()">Click</button><button class="headerButton centered" onClick="showMainAutomations()">Automations</button><button class="headerButton" onClick="showMainUpgrades()">Upgrades</button></p>
+    </br>
+    <div id="main_click">
+    <p style="text-align: center;"><button class="toClickMain" onclick="clickMain()">Click Me!</button></p>
+    </div>
+    <div id="main_automations">
+    <p style="text-align: center;"><button class="mainUpgradeButton" onClick="buyTier1CashGenerator(1)">Tier 1 Generators<br>You have: <span id="tier1CashGeneratorsOwned">0</span></br>Cost: $<span id="tier1CashGeneratorsCost">15</span></button>
+    </div>
+
+    </div>
+
+    <div id="options">
+      coming soon
+    </div>
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="click.js"></script>
+    <script type="text/javascript" src="control.js"></script>
+    <script type="text/javascript" src="mainAutomation.js"></script>
+    <script type="text/javascript" src="mainUpgrade.js"></script>
+  </body>
+</html>
