@@ -1,34 +1,74 @@
-.headerButton {
-  background-color: #dddddd;
-  padding: 14px 40px;
+.stats__primary {
+    font-size: 72px;
+    font-family: "arial"; 
+    left: 50%;
 }
 
-.centered {
-  left: 50%;
+.stats__secondary {
+    font-size: 24px;
+    font-family: "arial";
+    left: 50%;
 }
 
-.toClickMain {
-  background-color: #dddddd;
-  padding: 84px 240px;
+
+.stats__tertiary {
+    font-size: 12px;
+    font-family: "arial";
+    left: 50%;
 }
 
-.statsPrimary {
-  font-family: arial;
-  font-size: 72px;
+.currency-click-button__main {
+    font-size: 72px;
+    margin: auto;
+    padding: 56px 256px;
+    background-color: #00ff00;
+    font-family: "arial";
+    margin: auto;
 }
 
-.statsSecondary{
-  font-family: arial;
-  font-size: 24px;
+.top-navigation-button {
+    font-size: 14px;
+    height: 40px;
+    width: 256px;
+    background-color: #eeeeee;
+    font-family:"arial";
 }
 
-.statsTeritary{
-  font-family: arial;
-  font-size: 16px;
+.force-arial-font {
+    font-family: "arial";
 }
 
-.mainUpgradeButton{
-  font-family: arial;
-  padding: 15px 60px;
-  background-color: #dddddd;
+.purchase-button--cash-generator__main {
+    height: 48px;
+    width: 300px;
+    padding: 16px 16px;
+    font-family: "arial";
+    font-size: 14px;
+    background-color : #dddddd;
+}
+
+.purchase-button--token-generator__main {
+    height: 48px;
+    width: 300px;
+    padding: 16px 16px;
+    font-family: "arial";
+    font-size: 14px;
+    background-color : #dddddd;
+}
+
+
+.main-click {
+    margin: auto;
+}
+
+.settings-button {
+    height: 64px;
+    width: 192px;
+    background-color : #dddddd;
+}
+
+.upgrade-button {
+    height: 96x;
+    width: 300px;
+    background-color: #dddddd;
 }

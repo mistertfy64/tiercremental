@@ -1,35 +1,64 @@
-<!DOCTYPE HTML>
-<html>
-  <head>
+<!DOCTYPE html>
+<head>
+    <h1 class="force-arial-font" style="text-align:center;" onload="navigate('main','click')">Tiercremental</h1>
     <link rel="stylesheet" type="text/css" href="interface.css" />
-  </head>
-
-  <body>
-    <p style="text-align: center;" class="statsPrimary">$<span id="cash">0</span></p>
-    <p style="text-align: center;" class="statsSecondary">T$<span id="tokens">0</span></p>
-    <p style="text-align: center;" class="statsTeritary">$<span id="cashPerSecond">0</span>/s</p>
-    <p style="text-align: center;" class="statsTeritary">T$<span id="tokensPerSecond">0</span>/s</p>
-    <p style="text-align: center;"><button class="headerButton centered" onClick="showMain()">Main</button> <button class="headerButton" onClick="showOptions()">Options</button></p>
-    <br>
+    <p class="stats__primary" style="text-align:center;" >$<span id="cash-balance">0</span></p>
+    <p class="stats__secondary"style="text-align:center;" >T$<span id="token-balance">0</span></p>
+    <p style="text-align: center;"><button class="top-navigation-button" onClick="navigate('main', 'click')">Main</button><button class="top-navigation-button" onClick="navigate('settings', 'settings')">Settings</button></p>
+    <p style="text-align: center;"><button class="top-navigation-button" onClick="navigate('main', 'click')">Click</button><button class="top-navigation-button" onClick="navigate('main', 'automation')">Automation</button><button class="top-navigation-button" onClick="navigate('main', 'upgrade')">Upgrade</button></p>
+</head>
+<body>
     <div id="main">
-    <p style="text-align: center;"><button class="headerButton centered" onClick="showMainClick()">Click</button><button class="headerButton centered" onClick="showMainAutomations()">Automations</button><button class="headerButton" onClick="showMainUpgrades()">Upgrades</button></p>
-    </br>
-    <div id="main_click">
-    <p style="text-align: center;"><button class="toClickMain" onclick="clickMain()">Click Me!</button></p>
-    </div>
-    <div id="main_automations">
-    <p style="text-align: center;"><button class="mainUpgradeButton" onClick="buyTier1CashGenerator(1)">Tier 1 Generators<br>You have: <span id="tier1CashGeneratorsOwned">0</span></br>Cost: $<span id="tier1CashGeneratorsCost">15</span></button>
+    <div id="main-click">
+        <p style="text-align:center;"><button class="currency-click-button__main" onClick="clickCurrencyButton('main', 1)" style="text-align:center;" >$</button></p>
     </div>
 
+    <div id="main-automation">
+        <p style="text-align: center;"><button class="top-navigation-button" onClick="navigate('main', 'automation', 'cash')">Cash</button><button class="top-navigation-button" onClick="navigate('main', 'automation', 'token')">Token</button></p>
+        <div id="main-automation-cash">
+            <p class="force-arial-font" style="float:left;">You have <span id="tier-1-cash-generators-owned">0</span> Tier 1 Cash Generators generating $<span id="tier-1-cash-generators-production">0</span> per tick.</p> <span style="float:right"><button id="tier-1-cash-generator-purchase-button" class="purchase-button--cash-generator__main" onClick="purchaseTier1CashGenerator(1)">$<span id="tier-1-cash-generator-cost">0</span></span></button></span>
+            <br></br>
+            <br></br>
+            <p class="force-arial-font" style="float:left;">You have <span id="tier-2-cash-generators-owned">0</span> Tier 2 Cash Generators generating $<span id="tier-2-cash-generators-production">0</span> per tick.</p> <span style="float:right"><button id="tier-2-cash-generator-purchase-button" class="purchase-button--cash-generator__main" onClick="purchaseTier2CashGenerator(1)">$<span id="tier-2-cash-generator-cost">150000</span></span></button></span>
+            <br></br>
+            <br></br>
+            <p class="force-arial-font" style="float:left;">You have <span id="tier-3-cash-generators-owned">0</span> Tier 3 Cash Generators generating $<span id="tier-3-cash-generators-production">0</span> per tick.</p> <span style="float:right"><button id="tier-3-cash-generator-purchase-button" class="purchase-button--cash-generator__main" onClick="purchaseTier3CashGenerator(1)">$<span id="tier-3-cash-generator-cost">333333333</span></span></button></span>
+        </div>
+        <div id="main-automation-token">
+            <p class="force-arial-font" style="float:left;">You have <span id="tier-1-token-generators-owned">0</span> Tier 1 Token Generators generating T$<span id="tier-1-token-generators-production">0</span> per tick.</p> <span style="float:right"><button id="tier-1-token-generator-purchase-button" class="purchase-button--token-generator__main" onClick="purchaseTier1TokenGenerator(1)">T$<span id="tier-1-token-generator-cost">15</span></span></button></span>
+        </div>
     </div>
 
-    <div id="options">
-      coming soon
+    <br></br>
+
+    <div id="main-upgrade">
+    <p style="text-align: center;"><button class="top-navigation-button" onClick="navigate('main', 'upgrade', 'click')">Click</button><button class="top-navigation-button" onClick="navigate('main', 'upgrade', 'generator')">Generators</button></p>
+    <div id="main-upgrade-click">
+        <p><span style="float:left;">???</span><button style="float:right;">???</button></p>
     </div>
+    <div id="main-upgrade-generator">    
+    </div>
+    </div>
+</div>
+    <div id="settings">
+        <p style="text-align:center;"><button onClick="saveToFile1()" class="settings-button" float:center;><span class="force-arial-font">Save</span></button> <button onClick="loadFromFile1()" class="settings-button" float:center;><span class="force-arial-font">Load</span></button></p>
+        <br></br><br></br>
+        <p style="text-align:center;"><button class="settings-button"><element class="force-arial-font">Decimal Places: <span id="decimal-places">3</span></element><input type="range" min="0" max="20" value="3" id="decimal-places-slider"></button> <button class="settings-button" onClick="switchNumberFormattingMethod()">Number Formatting Method: <br><span id="number-formatting-method">Shortest</span></br></button></p>
+    </div>
+
+
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="main.js"></script>
-    <script type="text/javascript" src="click.js"></script>
-    <script type="text/javascript" src="control.js"></script>
-    <script type="text/javascript" src="mainAutomation.js"></script>
-    <script type="text/javascript" src="mainUpgrade.js"></script>
-  </body>
-</html>
+    <script type="text/javascript" src="clickfunctions.js"></script>
+    <script type="text/javascript" src="navigationfunctions.js"></script>
+    <script type="text/javascript" src="generationfunctions.js"></script>
+    <script type="text/javascript" src="updatefunctions.js"></script>
+    <script type="text/javascript" src="purchasefunctions.js"></script>
+    <script type="text/javascript" src="settingsfunctions.js"></script>
+</body>

@@ -1,21 +1,45 @@
-//Created by mistertfy69
-//mistertfy69#0001
-//u/mistertfy69
-//@mistertfy69
+// Tiercremental
 
-var cash = 0;
-var cashPerSecond = 0;
-var tokens = 0;
+// mistertfy64.github.io/tiercremental
 
-var mainPower = 1;
-var prestigeMainPower = 1;
-var cashPower = 1;
-var tokensPower = 1;
-var tierMainPower = 1;
-var clickPower = 1;
+// mistertfy64.github.io
 
-var tier1CashGeneratorsOwned = 0;
-var tier1CashGeneratorsProduction = 0;
-var tier1CashGeneratorsBought = 0;
-var tier1CashGeneratorsCostExponent = 3.125;
-var tier1CashGeneratorsPower = 1;
+// Discord: mistertfy64#0001
+// Twitter: @mistertfy64
+// Instagram: @mistertfy64
+
+var cashBalance = 0;
+var tokenBalance = 0;
+
+
+var rawMainClicks = 0;
+var mainClicks = 0;
+
+function cashGenerator(){
+    this.totalOwned = 0;
+    this.totalPurchased = 0;
+    this.totalGenerated = 0;
+    this.production = 0;
+    this.productionMultiplier1 = 1;
+}
+
+function tokenGenerator(){
+    this.totalOwned = 0;
+    this.totalPurchased = 0;
+    this.totalGenerated = 0;
+    this.production = 0;
+    this.productionMultiplier1 = 1;
+}
+
+var tier1CashGenerator = new cashGenerator();
+var tier1CashGeneratorCostExponent = 2.75;
+var tier2CashGenerator = new cashGenerator();
+var tier2CashGeneratorCostExponent = 5.425;
+var tier3CashGenerator = new cashGenerator();
+var tier3CashGeneratorCostExponent = 12.675;
+
+
+var tier1TokenGenerator = new tokenGenerator();
+var tier1TokenGeneratorCostExponent = 12.65;
+
+
