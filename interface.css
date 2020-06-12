@@ -1,74 +1,79 @@
+header {
+    font-family: arial;
+}
+
+body {
+    font-family: arial;
+}
+
 .stats__primary {
     font-size: 72px;
-    font-family: "arial"; 
-    left: 50%;
 }
 
 .stats__secondary {
     font-size: 24px;
-    font-family: "arial";
-    left: 50%;
-}
-
-
-.stats__tertiary {
-    font-size: 12px;
-    font-family: "arial";
-    left: 50%;
 }
 
 .currency-click-button__main {
+    background-color: #00dd00;
     font-size: 72px;
-    margin: auto;
-    padding: 56px 256px;
-    background-color: #00ff00;
-    font-family: "arial";
+    height: 144px;
+    width: 432px;
     margin: auto;
 }
 
-.top-navigation-button {
-    font-size: 14px;
-    height: 40px;
-    width: 256px;
-    background-color: #eeeeee;
-    font-family:"arial";
+.tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
 }
 
-.force-arial-font {
-    font-family: "arial";
+
+.tier-1-cash-generator-information-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
 }
 
-.purchase-button--cash-generator__main {
-    height: 48px;
+.tier-1-cash-generator-information-container .tooltip-text {
+    visibility: hidden;
+    width: 150px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 5px;
+    position: absolute;
+    z-index: 1;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    font-size: 10px;
+}
+
+.tier-2-cash-generator-information-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tier-2-cash-generator-information-container .tooltip-text {
+    visibility: hidden;
+    width: 150px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 5px;
+    position: absolute;
+    z-index: 1;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    font-size: 10px;
+}
+
+.main-currency-purchase-button {
     width: 300px;
-    padding: 16px 16px;
-    font-family: "arial";
-    font-size: 14px;
-    background-color : #dddddd;
-}
-
-.purchase-button--token-generator__main {
-    height: 48px;
-    width: 300px;
-    padding: 16px 16px;
-    font-family: "arial";
-    font-size: 14px;
-    background-color : #dddddd;
-}
-
-
-.main-click {
-    margin: auto;
-}
-
-.settings-button {
-    height: 64px;
-    width: 192px;
-    background-color : #dddddd;
-}
-
-.upgrade-button {
-    height: 96x;
-    width: 300px;
+    height: 50px;
     background-color: #dddddd;
 }
