@@ -31,6 +31,19 @@ body {
     padding: 5px 0;
 }
 
+.top-navigation-button {
+    background-color: #dddddd;
+    height: 36px;
+    width: 200px;
+    margin: auto;
+}
+
+.main-navigation-button {
+    background-color: #dddddd;
+    height: 36px;
+    width: 200px;
+    margin: auto;
+}
 
 .tier-1-cash-generator-information-container:hover .tooltip-text {
     visibility: visible;
@@ -71,6 +84,167 @@ body {
     vertical-align: middle;
     font-size: 10px;
 }
+
+.tier-3-cash-generator-information-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tier-3-cash-generator-information-container .tooltip-text {
+    visibility: hidden;
+    width: 150px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 5px;
+    position: absolute;
+    z-index: 1;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    font-size: 10px;
+}
+
+.tier-4-cash-generator-information-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tier-4-cash-generator-information-container .tooltip-text {
+    visibility: hidden;
+    width: 150px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 5px;
+    position: absolute;
+    z-index: 1;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    font-size: 10px;
+}
+
+.tier-5-cash-generator-information-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tier-5-cash-generator-information-container .tooltip-text {
+    visibility: hidden;
+    width: 150px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 5px;
+    position: absolute;
+    z-index: 1;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    font-size: 10px;
+}
+
+.tier-6-cash-generator-information-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tier-6-cash-generator-information-container .tooltip-text {
+    visibility: hidden;
+    width: 150px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 5px;
+    position: absolute;
+    z-index: 1;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    font-size: 10px;
+}
+
+.tier-7-cash-generator-information-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tier-7-cash-generator-information-container .tooltip-text {
+    visibility: hidden;
+    width: 150px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 5px;
+    position: absolute;
+    z-index: 1;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    font-size: 10px;
+}
+
+.tier-8-cash-generator-information-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tier-8-cash-generator-information-container .tooltip-text {
+    visibility: hidden;
+    width: 150px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 5px;
+    position: absolute;
+    z-index: 1;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    font-size: 10px;
+}
+
+.tier-9-cash-generator-information-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tier-9-cash-generator-information-container .tooltip-text {
+    visibility: hidden;
+    width: 150px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 5px;
+    position: absolute;
+    z-index: 1;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    font-size: 10px;
+}
+
+.tier-10-cash-generator-information-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tier-10-cash-generator-information-container .tooltip-text {
+    visibility: hidden;
+    width: 150px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 5px;
+    position: absolute;
+    z-index: 1;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    font-size: 10px;
+}
+
 
 .main-currency-purchase-button {
     width: 300px;
