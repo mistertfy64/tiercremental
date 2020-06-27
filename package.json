@@ -1,4 +1,3 @@
-"homepage": "https://github.com/mistertfy64/tiercremental"
 "dependencies": {
     "decimal.js": ">=10.2.0",
   },
