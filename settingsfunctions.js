@@ -145,38 +145,5 @@ var possibleSecondPartOfWordedSuffixWords = ["", "deci", "viginti", "triginta", 
 var possibleThirdPartOfWordedSuffixWords = ["", "centi", "ducenti", "trecenti", "quadringenti", "quingenti", "sescenti", "septingenti", "octogenti", "nongenti"]; //100
 
 function formatNumber(numberToFormat){
-    var tierOfFormattedNumber = Decimal.div(Decimal.sub(Decimal(numberToFormat.e), 3), 3);
-    var remainderOfDividingTheExponentOfTheNumberToFormatMinus3By3 = Decimal.mod(Decimal.sub(Decimal(numberToFormat.e), 3), 3); 
-    tierOfFormattedNumber = tierOfFormattedNumber.truncated();
-    if (tierOfFormattedNumber.greaterThanOrEqualTo(1000)){
-        return numberToFormat;
-    } else {
-        if (tierOfFormattedNumber.lessThanOrEqualTo(9)){
-            if (tierOfFormattedNumber.greaterThanOrEqualTo(1)){
-                var exponentIsLessThanOrEqualTo10SuffixWords = ["", "thousand", "million", "billion", "trillion", "quadrillion", "quintillion", "sextillion", "septillion", "octillion", "nonillion"];
-                return numberToFormat.dividedBy(Decimal.pow(10, Decimal.sub(numberToFormat.e, remainderOfDividingTheExponentOfTheNumberToFormatMinus3By3))) + " " + exponentIsLessThanOrEqualTo10SuffixWords[tierOfFormattedNumber.toString().charAt(tierOfFormattedNumber.toString().length - 1)];
-            } else {
-                return numberToFormat;
-            }
-        } else {
-            var possibleFirstPartOfWordedSuffixWords = ["", "un", "duo", "tre", "quattor", "quinqua", "se", "septe", "octo", "nove"]; //1
-            var possibleSecondPartOfWordedSuffixWords = ["", "deci", "viginti", "triginta", "quadraginta", "quinquaginta", "sexaginta", "septuaginta", "octoginta", "novaginta"]; //10
-            var possibleThirdPartOfWordedSuffixWords = ["", "centi", "ducenti", "trecenti", "quadringenti", "quingenti", "sescenti", "septingenti", "octogenti", "nongenti"]; //100
-            if (tierOfFormattedNumber.lessThanOrEqualTo(99)){
-                var unmodifiedWordedSuffixWithoutIllionToReturn = possibleFirstPartOfWordedSuffixWords[tierOfFormattedNumber.toString().charAt(tierOfFormattedNumber.toString().length - 1)] + possibleSecondPartOfWordedSuffixWords[tierOfFormattedNumber.toString().charAt(tierOfFormattedNumber.toString().length - 2)];
-                if (unmodifiedWordedSuffixWithoutIllionToReturn.charAt(unmodifiedWordedSuffixWithoutIllionToReturn.length - 1) - 1 == "a" || unmodifiedWordedSuffixWithoutIllionToReturn.charAt(unmodifiedWordedSuffixWithoutIllionToReturn.length - 1) == "e" || unmodifiedWordedSuffixWithoutIllionToReturn.charAt(unmodifiedWordedSuffixWithoutIllionToReturn.length - 1) == "i" || unmodifiedWordedSuffixWithoutIllionToReturn.charAt(unmodifiedWordedSuffixWithoutIllionToReturn.length - 1) == "o" || unmodifiedWordedSuffixWithoutIllionToReturn.charAt(unmodifiedWordedSuffixWithoutIllionToReturn.length - 1)== "u"){
-                    return numberToFormat.dividedBy(Decimal.pow(10, Decimal.sub(numberToFormat.e, remainderOfDividingTheExponentOfTheNumberToFormatMinus3By3))) + " " + unmodifiedWordedSuffixWithoutIllionToReturn.substring(0, unmodifiedWordedSuffixWithoutIllionToReturn.length - 1) + "illion";
-                }
-            } else {
-                var unmodifiedWordedSuffixWithoutIllionToReturn = possibleFirstPartOfWordedSuffixWords[tierOfFormattedNumber.toString().charAt(tierOfFormattedNumber.toString().length - 1)] + possibleSecondPartOfWordedSuffixWords[tierOfFormattedNumber.toString().charAt(tierOfFormattedNumber.toString().length - 2)] + possibleThirdPartOfWordedSuffixWords[tierOfFormattedNumber.toString().charAt(tierOfFormattedNumber.toString().length - 3)];
-                if (unmodifiedWordedSuffixWithoutIllionToReturn.charAt(unmodifiedWordedSuffixWithoutIllionToReturn.length - 1) == "a" || unmodifiedWordedSuffixWithoutIllionToReturn.charAt(unmodifiedWordedSuffixWithoutIllionToReturn.length - 1) == "e" || unmodifiedWordedSuffixWithoutIllionToReturn.charAt(unmodifiedWordedSuffixWithoutIllionToReturn.length - 1) == "i" || unmodifiedWordedSuffixWithoutIllionToReturn.charAt(unmodifiedWordedSuffixWithoutIllionToReturn.length - 1) == "o" || unmodifiedWordedSuffixWithoutIllionToReturn.charAt(unmodifiedWordedSuffixWithoutIllionToReturn.length - 1) == "u"){
-                    return numberToFormat.dividedBy(Decimal.pow(10, Decimal.sub(numberToFormat.e, remainderOfDividingTheExponentOfTheNumberToFormatMinus3By3))) + " " + unmodifiedWordedSuffixWithoutIllionToReturn.substring(0, unmodifiedWordedSuffixWithoutIllionToReturn.length - 1) + "illion";
-                } else {
-                    return numberToFormat.dividedBy(Decimal.pow(10, Decimal.sub(numberToFormat.e, remainderOfDividingTheExponentOfTheNumberToFormatMinus3By3))) + " " + unmodifiedWordedSuffixWithoutIllionToReturn + "illion";
-                }
-            }
-        }
-    }
-
+    return numberToFormat;
 }
-
