@@ -134,7 +134,7 @@ function loadFromFile1(){
     game.tier10CashGenerator.totalProduction = Decimal(game.tier10CashGenerator.totalProduction);
     game.tier10CashGenerator.productionPerGenerator = Decimal(game.tier10CashGenerator.productionPerGenerator);
     game.tier10CashGenerator.costExponent = Decimal(game.tier10CashGenerator.costExponent);
-    game.tier10CashGenerator.costAddend = Decimal(game.tier10ashGenerator.costAddend);
+    game.tier10CashGenerator.costAddend = Decimal(game.tier10CashGenerator.costAddend);
 
     
 }
