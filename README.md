@@ -7,6 +7,6 @@ too many bugs
 and im not going to fix them :)
 
 How to play:
-Tier n Generators generate Tier n-1 Generators.
-If Tier 1 Generators generate Tier 0 Generators.
+Tier [math]n[/math] Generators generate Tier [math]n-1[/math] Generators.
+Tier [math]1[/math] Generators generate $$$.
 That's it.
