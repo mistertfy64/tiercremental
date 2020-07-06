@@ -7,6 +7,17 @@ too many bugs
 and im not going to fix them :)
 
 How to play:
-Tier [math]n[/math] Generators generate Tier [math]n-1[/math] Generators.
-Tier [math]1[/math] Generators generate $$$.
+
+Tier `n` Generators generate Tier `n-1` Generators.
+
+Tier `1` Generators generate $$$.
+
+Use cash to buy more generators.
+
 That's it.
+
+Play [here](mistertfy64.github.io/tiercremental)
+
+[] Fix all the bugs
+
+this game is poopoo :poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop::poop:
