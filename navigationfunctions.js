@@ -1,48 +1,58 @@
-function navigate(currency, primarySection, secondarySection){
-    switch (currency){
-        case "main":
-            $("#settings").hide();
-            $("#main").show();
-            switch (primarySection){
-                case "click":
-                    $("#main-upgrade,#main-automation").hide();
-                    $("#main-click").show();
-                    break;
-                case "automation":
-                    $("#main-upgrade,#main-click").hide();
-                    $("#main-automation").show();
-                    switch (secondarySection){
-                        case "cash":
-                            $("#main-automation-token").hide();
-                            $("#main-automation-cash").show();
-                            break;
-                        case "token":
-                            $("#main-automation-cash").hide();
-                            $("#main-automation-token").show();
-                            break;
-                    }
-                    break;
-                case "upgrade":
-                    $("#main-click,#main-automation").hide();
-                    $("#main-upgrade").show();
-                    break;
-                    switch (secondarySection){
-                        case "click":
+navigateTo("game", "main", "click");
 
-                            break;
-                        case "generator":
-                            break;
-                        case undefined:
-                            break;
+function navigateTo(section, subsection, subsubsection, subsubsubsection, subsubsubsubsection, subsubsubsubsubsection, subsubsubsubsubsubsection, subsubsubsubsubsubsubsection, subsubsubsubsubsubsubsubsection, subsubsubsubsubsubsubsubsubsection, subsubsubsubsubsubsubsubsubsubsection){
+    switch (section){
+        case 'game':
+            {
+                $("#settings-container").hide();
+                $("#game-main-container").show();
+                switch (subsection){
+                    case 'main':
+                        {
+                        switch (subsubsection){
+                            case 'click':
+                                {
+                                    $("#main-automation-information-container").hide();
+                                    $("#main-upgrade-information-container").hide();
+                                    $("#main-prestige-information-container").hide(); 
+                                    $("#main-currency-button-container").show();
+                                    break;
+                                }
+                            case 'automation':
+                                {
+                                    $("#main-currency-button-container").hide();
+                                    $("#main-upgrade-information-container").hide();
+                                    $("#main-prestige-information-container").hide(); 
+                                    $("#main-automation-information-container").show();
+                                    break;
+                                }
+                            case 'upgrade':
+                                {
+                                    $("#main-automation-information-container").hide();
+                                    $("#main-currency-button-container").hide();
+                                    $("#main-prestige-information-container").hide(); 
+                                    $("#main-upgrade-information-container").show();
+                                    break;
+                                }
+                            case 'prestige':
+                                {
+                                    $("#main-upgrade-information-container").hide();
+                                    $("#main-automation-information-container").hide();
+                                    $("#main-currency-button-container").hide();
+                                    $("#main-prestige-information-container").show(); 
+                                }
+                        }
+                        break;
                     }
-                case undefined:
                     break;
+                }
+                break;
             }
-            break;
-        case "settings":
-            $("#main").hide();
-            $("#settings").show();
-        }
-        
-
+        case 'settings':
+            {
+                $("#game-main-container").hide();
+                $("#settings-container").show();
+                break;
+            }
     }
+}

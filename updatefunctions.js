@@ -1,6 +1,7 @@
 //Elements + Variables
 
 window.setInterval(function(){
+
     document.getElementById("cash-balance").innerHTML = formatNumber(game.cashBalance);
     document.getElementById("token-balance").innerHTML = formatNumber(game.tokenBalance);
 
@@ -64,7 +65,10 @@ window.setInterval(function(){
     document.getElementById("tier-10-cash-generators-generated").innerHTML = formatNumber(Decimal(game.tier10CashGenerator.totalGenerated));
     document.getElementById("tier-10-cash-generators-total-production").innerHTML = formatNumber(Decimal(game.tier10CashGenerator.totalProduction));
 
-    game.tier1CashGenerator.totalProduction = Decimal(game.tier1CashGenerator.totalOwned);
+
+    document.getElementById("main-tier-1-cash-generator-multiplier-1-upgrade-cost").innerHTML = formatNumber(Decimal(game.mainMultipliersPrices.tier1CashGeneratorMultiplier1));
+
+    game.tier1CashGenerator.totalProduction = Decimal(game.tier1CashGenerator.totalOwned).mul(game.mainMultipliers.prestige).mul(game.mainMultipliers.tier1CashGenerator[0]);
     game.tier2CashGenerator.totalProduction = Decimal(game.tier2CashGenerator.totalOwned);
     game.tier3CashGenerator.totalProduction = Decimal(game.tier3CashGenerator.totalOwned);
     game.tier4CashGenerator.totalProduction = Decimal(game.tier4CashGenerator.totalOwned);
@@ -72,6 +76,16 @@ window.setInterval(function(){
     game.tier6CashGenerator.totalProduction = Decimal(game.tier6CashGenerator.totalOwned);
     game.tier7CashGenerator.totalProduction = Decimal(game.tier7CashGenerator.totalOwned);
     game.tier8CashGenerator.totalProduction = Decimal(game.tier8CashGenerator.totalOwned);
-    game.tier9CashGenerator.totalProduction = Decimal(game.tier9CashGenerator.totalOwned);
+    game.tier9CashGenerator.totalProduction = Decimal(game.tier9CashGenerator.totalOwned)
     game.tier10CashGenerator.totalProduction = Decimal(game.tier10CashGenerator.totalOwned);
+
+    game.mainMultipliersPrices.tier1CashGeneratorMultiplier1 = Decimal.mul("1e5", Decimal.pow(10, Decimal.mul(Decimal.sub(game.mainMultipliers.tier1CashGenerator[0], "1"), "3")));
+
+
+    Decimal.precision = game.settings.precision;
+
+
 }, 10)
+
+
+

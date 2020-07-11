@@ -108,4 +108,22 @@ function purchaseTier10CashGenerator(amount){
         game.tier10CashGenerator.totalPurchased = Decimal(game.tier10CashGenerator.totalPurchased).add(1);
     }  
 }
+//Upgrade Functions
 
+function purchaseMainMultiplierUpgrade(tierAndCurrency, number){
+    switch (tierAndCurrency){
+        case "tier1CashGenerator" :
+            {
+                switch (number){
+                    case 1:
+                        {
+                            if (game.cashBalance.greaterThanOrEqualTo(game.mainMultipliersPrices.tier1CashGeneratorMultiplier1)){
+                                game.cashBalance = Decimal.sub(game.cashBalance, game.mainMultipliersPrices.tier1CashGeneratorMultiplier1);
+                                game.mainMultipliers.tier1CashGenerator[0] = Decimal.add(game.mainMultipliers.tier1CashGenerator[0], "1");
+                                typesetMath("main-tier-1-cash-generator-multiplier-1", "Multiplier_{Main_{Cash_{Tier1_{1}}}} = " + game.mainMultipliers.tier1CashGenerator[0])
+                            }
+                        }
+                }
+            }
+    }
+}

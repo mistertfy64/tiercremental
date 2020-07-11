@@ -98,7 +98,7 @@ var game = {
         totalProduction: new Decimal(0),
         productionPerGenerator: new Decimal(0),
         costExponent: new Decimal(77.77),
-        costAddend: new Decimal("5e40"),
+        costAddend: new Decimal("4.44444444e40"),
     },
     tier10CashGenerator : {
         totalOwned: new Decimal(0),
@@ -131,7 +131,7 @@ var game = {
         totalProduction: new Decimal(0),
         productionPerGenerator: new Decimal(0),
         costExponent: new Decimal(5),
-        costAddend: new Decimal("100"),
+        costAddend: new Decimal("100000"),
     },
     tier3TokenGenerator : {
         totalOwned: new Decimal(0),
@@ -142,6 +142,36 @@ var game = {
         totalProduction: new Decimal(0),
         productionPerGenerator: new Decimal(0),
         costExponent: new Decimal(5),
-        costAddend: new Decimal("100"),
+        costAddend: new Decimal("1e18"),
     },
+    mainMultipliers : {
+        tier1CashGenerator: [Decimal("1")],
+        tier2CashGenerator: [Decimal("1")],
+        tier3CashGenerator: [Decimal("1")],
+        tier4CashGenerator: [Decimal("1")],
+        tier5CashGenerator: [Decimal("1")],
+        tier6CashGenerator: [Decimal("1")],
+        tier7CashGenerator: [Decimal("1")],
+        tier8CashGenerator: [Decimal("1")],
+        tier9CashGenerator: [Decimal("1")],
+        tier10CashGenerator: [Decimal("1")],
+        tier1TokenGenerator: [Decimal("1")],
+        tier2TokenGenerator: [Decimal("1")],
+        tier3TokenGenerator: [Decimal("1")],
+        prestige: new Decimal("1"),
+    },
+    mainMultipliersPrices : {
+        tier1CashGeneratorMultiplier1: new Decimal("1e5"),
+    },
+    settings : {
+        notation: "worded",
+        precision: 20,
+    },
+    release: 1,
+    version: 0.010,
+
 }
+
+
+
+

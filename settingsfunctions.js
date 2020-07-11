@@ -4,7 +4,6 @@ window.setInterval(function(){
     saveToFile1();
 }, 60000);
 
-Decimal.set({ precision: 3});
 
 loadFromFile1AndTransformToDecimal();
 clickCurrencyButton('main', 0, 0);
@@ -29,7 +28,7 @@ function loadFromFile1AndTransformToDecimal(){
     if (typeof saveFileToLoad.game.tier6CashGenerator !== "undefined") game.tier6CashGenerator = saveFileToLoad.game.tier6CashGenerator;
     if (typeof saveFileToLoad.game.tier7CashGenerator !== "undefined") game.tier7CashGenerator = saveFileToLoad.game.tier7CashGenerator;
     if (typeof saveFileToLoad.game.tier8CashGenerator !== "undefined") game.tier8CashGenerator = saveFileToLoad.game.tier8CashGenerator;
-    if (typeof saveFileToLoad.game.tier9CashGenerator !== "undefined") game.tier9ashGenerator = saveFileToLoad.game.tier9CashGenerator;
+    if (typeof saveFileToLoad.game.tier9CashGenerator !== "undefined") game.tier9CashGenerator = saveFileToLoad.game.tier9CashGenerator;
     if (typeof saveFileToLoad.game.tier10CashGenerator !== "undefined") game.tier10CashGenerator = saveFileToLoad.game.tier10CashGenerator;
 
 
@@ -136,7 +135,6 @@ function loadFromFile1AndTransformToDecimal(){
     game.tier10CashGenerator.costExponent = Decimal(game.tier10CashGenerator.costExponent);
     game.tier10CashGenerator.costAddend = Decimal(game.tier10CashGenerator.costAddend);
 
-    
 }
 
 //Worded Suffix
@@ -186,7 +184,7 @@ function formatNumber(numberToFormat){
     }
     */
    if (numberToFormat.lessThan(1000)){
-       return numberToFormat;
+        return numberToFormat;
    } else {
        return numberToFormat.toExponential();
    }
