@@ -1,5 +1,6 @@
 # tiercremental
-A revamped version of S-Worker
+The worst incremental game you'll ever play
+
 btw im stinky
 
 v0.0.1.0.whatever alpha release:
