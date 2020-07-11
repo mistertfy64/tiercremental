@@ -1,5 +1,4 @@
 
-
 window.setInterval(function(){
     saveToFile1();
 }, 60000);
@@ -138,54 +137,46 @@ function loadFromFile1AndTransformToDecimal(){
 }
 
 //Worded Suffix
-var wordsForTierThatIsLessThan10ForWordedSuffix = ["thousand", "million", "billion", "trillion", "quadrillion", "quintillion", "sextillion", "septillion", "octillion", "nonillion"]; //for tier < 10
+var wordsForTierThatIsLessThan10ForWordedSuffix = ["", "thousand", "million", "billion", "trillion", "quadrillion", "quintillion", "sextillion", "septillion", "octillion", "nonillion"]; //for tier < 10
 var possibleFirstPartOfWordedSuffixWords = ["", "un", "duo", "tre", "quattor", "quinqua", "se", "septe", "octo", "nove"]; //1
 var possibleSecondPartOfWordedSuffixWords = ["", "deci", "viginti", "triginta", "quadraginta", "quinquaginta", "sexaginta", "septuaginta", "octoginta", "novaginta"]; //10
 var possibleThirdPartOfWordedSuffixWords = ["", "centi", "ducenti", "trecenti", "quadringenti", "quingenti", "sescenti", "septingenti", "octogenti", "nongenti"]; //100
 
 function formatNumber(numberToFormat){
-    /*
-
-    TODO: i give up already
-
-    var tier = Decimal.floor(Decimal.div(Decimal.sub(numberToFormat.e, 3), 3));
-    var remainder = Decimal.mod(Decimal.sub(numberToFormat.e, 3), 3);
-    if (tier.greaterThanOrEqualTo(1000) || (tier.lessThanOrEqualTo(9) && (tier.greaterThanOrEqualTo(1)))){
-        if (tier.lessThanOrEqualTo(9) && (tier.greaterThanOrEqualTo(2))){
-            mantissa = Decimal.div(numberToFormat, Decimal.pow(10, Decimal.sub(numberToFormat.e, remainder)));
-            return mantissa + " " + wordsForTierThatIsLessThan10ForWordedSuffix[tier];
-        } else {
-            if (tier.lessThan(2)){
-                return numberToFormat;
-            }
-        }
-        return numberToFormat;
-    } else {
-        if (tier.greaterThanOrEqualTo(100)){ // tier = 100 to 999
-            firstPartOfWordedSuffix = possibleFirstPartOfWordedSuffixWords[tier.toString().charAt(tier.length - 1)];
-            secondPartOfWordedSuffix = possibleSecondPartOfWordedSuffixWords[tier.toString().charAt(tier.length - 2)];
-            thirdPartOfWordedSuffix = possibleThirdPartOfWordedSuffixWords[tier.toString().charAt(tier.length - 3)];
-            wordedSuffixWithoutIllionAndMantissa = firstPartOfWordedSuffix + secondPartOfWordedSuffix + thirdPartOfWordedSuffix;
-            if (wordedSuffixWithoutIllionAndMantissa.toString().charAt(wordedSuffixWithoutIllionAndMantissa.length) - 1 == "a" || wordedSuffixWithoutIllionAndMantissa.toString().charAt(wordedSuffixWithoutIllionAndMantissa.length - 1) == "e" || wordedSuffixWithoutIllionAndMantissa.toString().charAt(wordedSuffixWithoutIllionAndMantissa.length - 1) == "i" || wordedSuffixWithoutIllionAndMantissa.toString().charAt(wordedSuffixWithoutIllionAndMantissa.length - 1) == "o" || wordedSuffixWithoutIllionAndMantissa.toString().charAt(wordedSuffixWithoutIllionAndMantissa.length - 1) == "u"){
-                wordedSuffixWithoutIllionAndMantissa = wordedSuffixWithoutIllionAndMantissa.toString().substring(0, wordedSuffixWithoutIllionAndMantissa.length - 1);
-            }
-            mantissa = Decimal.div(numberToFormat, Decimal.pow(10, Decimal.sub(numberToFormat.e, remainder)));
-            return mantissa + " " + wordedSuffixWithoutIllionAndMantissa + "illion";
-        } else {    //tier = 10 to 99
-            firstPartOfWordedSuffix = possibleFirstPartOfWordedSuffixWords[tier.toString().charAt(tier.length - 1)];
-            secondPartOfWordedSuffix = possibleSecondPartOfWordedSuffixWords[tier.toString().charAt(tier.length - 2)];
-            wordedSuffixWithoutIllionAndMantissa = firstPartOfWordedSuffix + secondPartOfWordedSuffix;
-            if (wordedSuffixWithoutIllionAndMantissa.toString().charAt(wordedSuffixWithoutIllionAndMantissa.length) - 1 == "a" || wordedSuffixWithoutIllionAndMantissa.toString().charAt(wordedSuffixWithoutIllionAndMantissa.length - 1) == "e" || wordedSuffixWithoutIllionAndMantissa.toString().charAt(wordedSuffixWithoutIllionAndMantissa.length - 1) == "i" || wordedSuffixWithoutIllionAndMantissa.toString().charAt(wordedSuffixWithoutIllionAndMantissa.length - 1) == "o" || wordedSuffixWithoutIllionAndMantissa.toString().charAt(wordedSuffixWithoutIllionAndMantissa.length - 1) == "u"){
-                wordedSuffixWithoutIllionAndMantissa = wordedSuffixWithoutIllionAndMantissa.toString().substring(0, wordedSuffixWithoutIllionAndMantissa.length - 1);
-            }
-            mantissa = Decimal.div(numberToFormat, Decimal.pow(10, Decimal.sub(numberToFormat.e, remainder)));
-            return mantissa + " " + wordedSuffixWithoutIllionAndMantissa + "illion";
-        }
-    }
-    */
    if (numberToFormat.lessThan(1000)){
         return numberToFormat;
    } else {
-       return numberToFormat.toExponential();
+       exponentDividedBy3RoundedDown = Decimal.div(Decimal.log10(numberToFormat), 3).floor();
+       exponentDividedBy3RoundedDownSubtractedBy1 = Decimal.sub(exponentDividedBy3RoundedDown, 1);
+       if (exponentDividedBy3RoundedDown.lessThanOrEqualTo(9) || exponentDividedBy3RoundedDown.greaterThanOrEqualTo(1000)) {
+           if (exponentDividedBy3RoundedDown.lessThanOrEqualTo(9)){
+                mantissa = Decimal.div(numberToFormat, Decimal.pow(10, Decimal.mul(exponentDividedBy3RoundedDown, 3)));
+                return mantissa.toFixed(game.settings.decimalPlaces) + " " + wordsForTierThatIsLessThan10ForWordedSuffix[exponentDividedBy3RoundedDown];                
+           } else {
+                return numberToFormat.toExponential();
+           }
+       } else {
+        if (exponentDividedBy3RoundedDown.greaterThanOrEqualTo(10) && exponentDividedBy3RoundedDown.lessThanOrEqualTo(99)){
+            firstPartOfWordedSuffix = possibleFirstPartOfWordedSuffixWords[Decimal.mod(exponentDividedBy3RoundedDownSubtractedBy1, 10)];
+            secondPartOfWordedSuffix = possibleSecondPartOfWordedSuffixWords[Decimal.div(exponentDividedBy3RoundedDownSubtractedBy1, 10).floor()];
+            mantissa = Decimal.div(numberToFormat, Decimal.pow(10, Decimal.mul(exponentDividedBy3RoundedDownSubtractedBy1, 3)));
+            wordedSuffixWithoutMantissaAndIllion = firstPartOfWordedSuffix + secondPartOfWordedSuffix;
+            if (wordedSuffixWithoutMantissaAndIllion.toString().charAt(wordedSuffixWithoutMantissaAndIllion.length - 1) == "a" || wordedSuffixWithoutMantissaAndIllion.toString().charAt(wordedSuffixWithoutMantissaAndIllion.length - 1) == "e" || wordedSuffixWithoutMantissaAndIllion.toString().charAt(wordedSuffixWithoutMantissaAndIllion.length - 1) == "i" || wordedSuffixWithoutMantissaAndIllion.toString().charAt(wordedSuffixWithoutMantissaAndIllion.length - 1) == "o" || wordedSuffixWithoutMantissaAndIllion.toString().charAt(wordedSuffixWithoutMantissaAndIllion.length - 1) == "u"){
+                wordedSuffixWithoutMantissaAndIllion = wordedSuffixWithoutMantissaAndIllion.toString().substring(0, wordedSuffixWithoutMantissaAndIllion.length - 1);
+            }
+            return mantissa.toFixed(game.settings.decimalPlaces) + " " + wordedSuffixWithoutMantissaAndIllion + "illion";
+        } else if ((exponentDividedBy3RoundedDown.greaterThanOrEqualTo(100) && exponentDividedBy3RoundedDown.lessThanOrEqualTo(999))){
+            firstPartOfWordedSuffix = possibleFirstPartOfWordedSuffixWords[Decimal.mod(Decimal.mod(exponentDividedBy3RoundedDownSubtractedBy1, 100), 10)];
+            secondPartOfWordedSuffix = possibleSecondPartOfWordedSuffixWords[Decimal.mod(Decimal.div(exponentDividedBy3RoundedDownSubtractedBy1, 10).floor(), 10)];
+            thirdPartOfWordedSuffix = possibleThirdPartOfWordedSuffixWords[Decimal.div(exponentDividedBy3RoundedDownSubtractedBy1, 100).floor()];
+            mantissa = Decimal.div(numberToFormat, Decimal.pow(10, Decimal.mul(exponentDividedBy3RoundedDownSubtractedBy1, 3)));
+            wordedSuffixWithoutMantissaAndIllion = firstPartOfWordedSuffix + secondPartOfWordedSuffix + thirdPartOfWordedSuffix;
+            if (wordedSuffixWithoutMantissaAndIllion.toString().charAt(wordedSuffixWithoutMantissaAndIllion.length - 1) == "a" || wordedSuffixWithoutMantissaAndIllion.toString().charAt(wordedSuffixWithoutMantissaAndIllion.length - 1) == "e" || wordedSuffixWithoutMantissaAndIllion.toString().charAt(wordedSuffixWithoutMantissaAndIllion.length - 1) == "i" || wordedSuffixWithoutMantissaAndIllion.toString().charAt(wordedSuffixWithoutMantissaAndIllion.length - 1) == "o" || wordedSuffixWithoutMantissaAndIllion.toString().charAt(wordedSuffixWithoutMantissaAndIllion.length - 1) == "u"){
+                wordedSuffixWithoutMantissaAndIllion = wordedSuffixWithoutMantissaAndIllion.toString().substring(0, wordedSuffixWithoutMantissaAndIllion.length - 1);
+            }
+            return mantissa.toFixed(game.settings.decimalPlaces) + " " + wordedSuffixWithoutMantissaAndIllion + "illion";
+        }
+       }
+       
    }
 }
