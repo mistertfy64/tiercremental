@@ -10,7 +10,7 @@ var game = {
         totalProduction: new Decimal(0),
         productionPerGenerator: new Decimal(0),
         costExponent: new Decimal(1.8),
-        costAddend: new Decimal(0),
+        costAddend: new Decimal("0"),
     },
     tier2CashGenerator : {
         totalOwned: new Decimal(0),
@@ -21,7 +21,7 @@ var game = {
         totalProduction: new Decimal(0),
         productionPerGenerator: new Decimal(0),
         costExponent: new Decimal(4.7),
-        costAddend: new Decimal(10000),
+        costAddend: new Decimal("10000"),
     },
     tier3CashGenerator : {
         totalOwned: new Decimal(0),
@@ -32,7 +32,7 @@ var game = {
         totalProduction: new Decimal(0),
         productionPerGenerator: new Decimal(0),
         costExponent: new Decimal(7.55),
-        costAddend: new Decimal(7777777),
+        costAddend: new Decimal("7777777"),
     },
     tier4CashGenerator : {
         totalOwned: new Decimal(0),
@@ -43,7 +43,7 @@ var game = {
         totalProduction: new Decimal(0),
         productionPerGenerator: new Decimal(0),
         costExponent: new Decimal(12.425),
-        costAddend: new Decimal(1212312345),
+        costAddend: new Decimal("1212312345"),
     },
     tier5CashGenerator : {
         totalOwned: new Decimal(0),
@@ -164,6 +164,7 @@ var game = {
         tier1CashGeneratorMultiplier1: new Decimal("1e5"),
     },
     settings : {
+        decimalPlaces: 3,
         notation: "worded",
         precision: 20,
     },

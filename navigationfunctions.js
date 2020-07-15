@@ -32,6 +32,32 @@ function navigateTo(section, subsection, subsubsection, subsubsubsection, subsub
                                     $("#main-currency-button-container").hide();
                                     $("#main-prestige-information-container").hide(); 
                                     $("#main-upgrade-information-container").show();
+                                    switch (subsubsubsection){
+                                        case 'multipliers':
+                                            {
+                                                $("#main-upgrade-costs-information-container").hide();
+                                                $("#main-upgrade-one-time-upgrades-information-container").hide();
+                                                $("#main-upgrade-multipliers-information-container").show();
+                                                break;
+                                            }
+                                        case 'costs':
+                                            {
+
+                                                $("#main-upgrade-one-time-upgrades-information-container").hide();
+                                                $("#main-upgrade-multipliers-information-container").hide();
+                                                $("#main-upgrade-costs-information-container").show();
+                                                break;
+                                            }
+                                        case 'oneTime':
+                                            {
+                                                $("#main-upgrade-multipliers-information-container").hide();
+                                                $("#main-upgrade-costs-information-container").hide();
+                                                $("#main-upgrade-one-time-upgrades-information-container").show();
+
+                                                break;
+                                            }
+                                            break;
+                                    }
                                     break;
                                 }
                             case 'prestige':

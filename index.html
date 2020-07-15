@@ -73,9 +73,9 @@
             </div>
         </div>
             <div id="main-upgrade-information-container">
+                <p style="text-align:center;"><span style="text-align:center;"><button class="main-navigation-button" onClick="navigateTo('game', 'main', 'upgrade', 'multipliers')">Multiplier Upgrades</button><button class="main-navigation-button" onClick="navigateTo('game', 'main', 'upgrade', 'costs')">Cost Upgrades</button><button class="main-navigation-button" onClick="navigateTo('game', 'main', 'upgrade', 'oneTime')">One Time Upgrades</button></p>
+                <div id="main-upgrade-multipliers-information-container">
                 <p style="text-align:center;">All Multipliers are multiplicative, which means that $$Multiplier_{Main_{Cash_{TierAll_{Total}}}} = Multiplier_{Main_{Cash_{TierAll_{1}}}} \times Multiplier_{Main_{Cash_{TierAll_{2}}}} \times \dotsi \times Multiplier_{Main_{Cash_{TierAll_{Final}}}}$$</p>
-                <br>
-                </br>
                 <p style="text-align:center;">
                     <button class="main-infinitely-upgradeable-upgrade-button" onClick="purchaseMainMultiplierUpgrade('tier1CashGenerator', 1)">
                         $$Multiplier_{Main_{Cash_{Tier1_{1}}}} + 1$$<br>
@@ -84,7 +84,23 @@
                         </div>
                         <br>Cost: $<span id="main-tier-1-cash-generator-multiplier-1-upgrade-cost">1e+5</span>
                     </button>
-                    </button>
+                </p>
+                </div>
+                <div id="main-upgrade-costs-information-container">
+                    <p>Current Tier 1 Cash Generator Cost Formula: <div id="main-tier-1-cash-generator-cost-formula">\( \displaystyle{Cost = \lfloor Tier1CashGeneratorsPurchased^{1.8} \rfloor}\)</div></p>
+                    <p>Current Tier 2 Cash Generator Cost Formula: <div id="main-tier-2-cash-generator-cost-formula">\( \displaystyle{Cost = \lfloor Tier2CashGeneratorsPurchased^{4.7} \rfloor + 1 \times 10^{4}}\)</div></p>
+                    <p>Current Tier 3 Cash Generator Cost Formula: <div id="main-tier-3-cash-generator-cost-formula">\( \displaystyle{Cost = \lfloor Tier3CashGeneratorsPurchased^{7.55} \rfloor + 7.77 \times 10^{7}}\)</div></p>
+                    <p>Current Tier 4 Cash Generator Cost Formula: <div id="main-tier-4-cash-generator-cost-formula">\( \displaystyle{Cost = \lfloor Tier4CashGeneratorsPurchased^{12.425} \rfloor + 1.21 \times 10^{10}}\)</div></p>
+                    <p>Current Tier 5 Cash Generator Cost Formula: <div id="main-tier-5-cash-generator-cost-formula">\( \displaystyle{Cost = \lfloor Tier5CashGeneratorsPurchased^{17.3} \rfloor + 2 \times 10^{14}}\)</div></p>
+                    <p>Current Tier 6 Cash Generator Cost Formula: <div id="main-tier-6-cash-generator-cost-formula">\( \displaystyle{Cost = \lfloor Tier6CashGeneratorsPurchased^{25} \rfloor + 1.82 \times 10^{18}}\)</div></p>
+                    <p>Current Tier 7 Cash Generator Cost Formula: <div id="main-tier-7-cash-generator-cost-formula">\( \displaystyle{Cost = \lfloor Tier7CashGeneratorsPurchased^{39.4} \rfloor + 2.22 \times 10^{22}}\)</div></p>
+                    <p>Current Tier 8 Cash Generator Cost Formula: <div id="main-tier-8-cash-generator-cost-formula">\( \displaystyle{Cost = \lfloor Tier8CashGeneratorsPurchased^{55.55} \rfloor + 9 \times 10^{27}}\)</div></p>
+                    <p>Current Tier 9 Cash Generator Cost Formula: <div id="main-tier-9-cash-generator-cost-formula">\( \displaystyle{Cost = \lfloor Tier9CashGeneratorsPurchased^{77.77} \rfloor + 4.44 \times 10^{40}}\)</div></p>
+                    <p>Current Tier 10 Cash Generator Cost Formula: <div id="main-tier-10-cash-generator-cost-formula">\( \displaystyle{Cost = \lfloor Tier10CashGeneratorsPurchased^{123.456789} \rfloor + 1 \times 10^{100}}\)</div></p>
+                </div>
+                <div id="main-upgrade-one-time-upgrades-information-container">
+
+                </div>
                 </p>
             </div>
             <div id="main-prestige-information-container">
