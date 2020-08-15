@@ -1,0 +1,175 @@
+header {
+    font-family: arial;
+}
+
+body {
+    font-family: arial;
+}
+
+.stats__primary {
+    font-size: 72px;
+}
+
+.stats__secondary {
+    font-size: 24px;
+}
+
+.currency-click-button__main {
+    background-color: #00dd00;
+    font-size: 72px;
+    height: 144px;
+    width: 432px;
+    margin: auto;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.top-navigation-button {
+    background-color: #dddddd;
+    height: 36px;
+    width: 200px;
+    margin: auto;
+}
+
+.main-navigation-button {
+    background-color: #dddddd;
+    height: 36px;
+    width: 200px;
+    margin: auto;
+}
+
+.tier-1-cash-generator-information-container {
+    position: relative;
+    display: inline-block;
+}
+
+.tier-2-cash-generator-information-container {
+    position: relative;
+    display: inline-block;
+}
+
+.tier-3-cash-generator-information-container {
+    position: relative;
+    display: inline-block;
+}
+
+.tier-4-cash-generator-information-container {
+    position: relative;
+    display: inline-block;
+}
+
+.tier-5-cash-generator-information-container {
+    position: relative;
+    display: inline-block;
+}
+
+.tier-6-cash-generator-information-container {
+    position: relative;
+    display: inline-block;
+}
+
+.tier-7-cash-generator-information-container {
+    position: relative;
+    display: inline-block;
+}
+
+.tier-8-cash-generator-information-container {
+    position: relative;
+    display: inline-block;
+}
+
+.tier-9-cash-generator-information-container {
+    position: relative;
+    display: inline-block;
+}
+
+.tier-10-cash-generator-information-container {
+    position: relative;
+    display: inline-block;
+}
+
+.main-generator-tooltip-text {
+    background-color: #555;
+    padding: 5px 5px;
+    height: 30px;
+    width: 300px;
+    color: #fff;
+    font-size: 10px;
+    text-align: center;
+    left: 225%;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+}
+
+.tier-1-cash-generator-information-container:hover .main-generator-tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tier-2-cash-generator-information-container:hover .main-generator-tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tier-3-cash-generator-information-container:hover .main-generator-tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tier-4-cash-generator-information-container:hover .main-generator-tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tier-5-cash-generator-information-container:hover .main-generator-tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tier-6-cash-generator-information-container:hover .main-generator-tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tier-7-cash-generator-information-container:hover .main-generator-tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tier-8-cash-generator-information-container:hover .main-generator-tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tier-9-cash-generator-information-container:hover .main-generator-tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tier-10-cash-generator-information-container:hover .main-generator-tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.main-automation-purchase-button {
+    background-color: #dddddd;
+    height: 40px;
+    width: 300px;
+    padding: 5px 5px;
+}
+
+.main-infinitely-upgradeable-upgrade-button {
+    background-color: #dddddd;
+    height: 180px;
+    width: 300px;
+
+}
